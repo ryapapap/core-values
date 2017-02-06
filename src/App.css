@@ -1,0 +1,85 @@
+body {
+  font-family: 'Overpass', sans-serif;
+  color: #dfdce3;
+}
+
+.Tile-Title {
+  text-align: center;
+  font-family: 'Overpass', sans-serif;
+  font-size: 150px;
+  font-weight: 500;
+  height: 30%;
+}
+
+.Tile-Content {
+  height: 50%;
+  min-height: 500px;
+}
+
+.quote {
+  margin: auto;
+  padding-top: 10%;
+  font-size: 24px;
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  width: 600px;
+}
+
+.author {
+  padding-top: 15px;
+  text-align: right;
+  padding-right: 60px;
+  font-size: 24px;
+  font-family: 'Playfair Display', serif;
+}
+
+.explanation {
+  padding-top: 5%;
+  font-size: 24px;
+  column-count: 2;
+  font-family: 'Playfair Display', serif;
+  width: 50%;
+  margin: auto;
+}
+
+.definition {
+  margin: auto;
+  padding-top: 10%;
+  font-size: 24px;
+  font-family: 'Playfair Display', serif;
+  width: 320px;
+}
+
+.defined {
+  display: inline;
+  font-weight: 600;
+  font-style: italic;
+}
+
+.Tile {
+  height: 100vh;
+  min-height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Redd { 
+  background-color: #503A52;
+}
+
+.Red {
+  background-color: #3A0D1F;
+}
+
+.Green {
+  background-color: #0F644D
+}
+
+.Purple {
+  background-color: #1C1325;
+}
+
+.Blue { 
+  background-color: #023A47
+}
