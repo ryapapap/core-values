@@ -4,6 +4,29 @@ import './App.css';
 // quote="Do not be embarrassed by your mistakes. Nothing can teach us better than our understanding of them. This is one of the best ways of self-education"
 // author="Thomas Carlyle"
 
+function Quote(props) {
+  return (<div>
+  <div className="quote">
+    {props.children}
+  </div>
+  <div className="author">
+  — {props.author}
+  </div>
+</div>);
+}
+
+function Explanation(props) {
+  return (<div className="explanation">
+    {props.children}
+  </div>);
+}
+
+function Definition(props) {
+  return (<div className="definition">
+    <div className="defined">{props.defined}</div> — {props.children}
+  </div>);
+}
+
 class Tile extends Component {
   propTypes = {
     color: React.PropTypes.string,
@@ -13,32 +36,23 @@ class Tile extends Component {
     explanation: React.PropTypes.string
   }
   state = {
-    isQuote: true
+    front: true
   }
 
   render() {
     return (<div 
       className={`Tile ${this.props.color}`} 
-      onClick={() => {this.setState({ isQuote: !this.state.isQuote})}}
+      onClick={() => {this.setState({ front: !this.state.front})}}
     >
       <div className="Tile-Content">
-        <div className="Tile-Title">
-          {this.props.title}
-        </div>
-        {this.state.isQuote ? 
-          <div>
-            <div className="quote">
-              {this.props.quote}
-            </div>
-            <div className="author">
-            — {this.props.author}
-            </div>
+          <div className="Tile-Title">
+            {this.props.title}
           </div>
-        :
-          <div className="explanation">
-            {this.props.explanation}
-          </div>
-        }
+          {this.state.front ? 
+            this.props.children[0]
+          :
+            this.props.children[1]
+          }
       </div>
     </div>)
   }
@@ -63,47 +77,78 @@ More than just moving fast. Willingness to change direction. That I like buildin
 class App extends Component {
   render() {
     return (<div className="Tile-Container">
-        <div className="Tile Purple">
-          <div className="Tile-Content">
-            <div className="Tile-Title">
-              Core Values
-            </div>
-            <div className="definition">
-              <div className="defined">core</div> — the central or most important part of something.
-            </div>
-            <div className="definition">
-              <div className="defined">value</div> — a person's principles or standards of behavior.
-            </div>
+        <Tile
+          color="Purple"
+          title="Core Values"
+        >
+          <div>
+            <Definition defined="core">
+              the central or most important part of something.
+            </Definition>
+            <Definition defined="value">
+              a person's principles or standards of behavior.
+            </Definition>
           </div>
-        </div>
-        <Tile 
+          <Explanation>
+            I made this site because I think it's easier to make decisions when they're based around something, or at least can be measured against something. Often I'll ask myself what I should be doing, or what I want to be doing, or why I'm doing something. And these are tough questions. I don't think I can answer them authoritatively (and I don't think I'd want to). But I do want something I can consider so that when I'm trying to answer these questions, I have something to help guide me. The following are a list of values that I've reflected on and consider important to me and the type of work I want to be doing. This isn't meant to be a complete list of everything that I find valuable, it's just what I came up with when I was thinking about it this time. Maybe if you ask me now (at the time you're reading this), my answer would be different, but for this moment (the one where I'm writing this), these are some ideas that I resonate with very strongly.
+          </Explanation>
+        </Tile>
+        <Tile
           color="Red"
           title="Empower others"
-          quote="Look at all your knowledge as a gift, as a means of helping other people."
-          author="John Ruskin"
-          explanation="Technology has changed a lot of aspects of modern life. I don't think all of these changes have been good, but I think the best changes have been centered around helping people do new things (or old things easier). These are what I'm thinking about when I say empowering others. I think technology is best when it's aware that people that will be using it. A big part of why I wanted to work in tech is because it lets me create things that help others. I want to be empowering others. ????????????"
-        />
-        <Tile 
+        >
+          <Quote author="John Ruskin">
+              Look at all your knowledge as a gift, as a means of helping other people.
+          </Quote>
+          <Explanation>
+            I think the coolest part about computers is the way they've revolutionized just about everything. I don't think it's always good-- how easy it is to be endlessly distracted, addicted to the endless content, or living in an echo chamber all seem bad to me. But the good it's created has been enormous; things like making completely new and novel experiences, connecting and sharing seemingly infinite amounts of knowledge, the sheer amount of calculations and efficiency its given. I'm in awe of these and very much want to be creating things in this tradition. I think the best thing I can do with technology is help other people, either to do something they could never do before or to do something much better than before. Technology gives us the ability to control more than we could alone and that's very powerful.
+          </Explanation>
+        </Tile>
+        <Tile
           color="Blue"
           title="Be Constructive"
-          quote="To build may have to be the slow and laborious task of years. To destroy can be the thoughtless act of a single day."
-          author="Winston Churchill"
-          explanation="Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"
-        />
-        <Tile 
+        >
+          <Quote author="Winston Churchill">
+              To build may have to be the slow and laborious task of years. To destroy can be the thoughtless act of a single day.
+          </Quote>
+          <Explanation>
+            There's a double meaning for constructive here. In a literal sense, I want to create things. Building something and seeing the result is rewarding to me. "Things" is a very vague term and I use it consciously because I'm including things like computer programs, creative writing, phyiscal objects, and even my self.
+            But I also think of being constructive in terms of communicating. I think how an idea is conveyed is very important. It is very easy to criticize or fail to understand something. I think it's important to not be dismissive, to listen, to help, to lead others.
+          </Explanation>
+        </Tile>
+        <Tile
           color="Redd"
           title="No Ego"
-          quote="Remember that you are more free if you change your opinion and follow those who have corrected your mistakes than if you are stubborn aabout your mistakes."
-          author="Marcus Aurelius"
-          explanation="Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"
-        />
-        <Tile 
+        >
+          <Quote author="Marcus Aurelius">
+              Remember that you are more free if you change your opinion and follow those who have corrected your mistakes than if you are stubborn aabout your mistakes.
+          </Quote>
+          <Explanation>
+            I think it's hard to grow if you're attached to who you are or what you've done. And I very much want to grow. I don't need credit for things. The importance in looking for errors is not to criticize, but to improve. I, as a person, don't want to succeed, but I want what I create to succeed. I want what I create to have merit. To do that, I have to learn. To learn, I have to be open.
+          </Explanation>
+        </Tile>
+        <Tile
           color="Green"
           title="Agility"
-          quote="It is not the place we occupy which is important, but the direction in which we move."
-          author="Oliver Wendell Holmes"
-          explanation="Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"
-        />
+        >
+          <Quote author="Oliver Wendell Holmes">
+              It is not the place we occupy which is important, but the direction in which we move.
+          </Quote>
+          <Explanation>
+            I've mentioned that I want to create things, but to be more specific I want to create great things and I think the way to do that is to create a lot of things. I don't think I can do that without being agile. It's also important for being willing to recognize when something isn't right and needs to be changed. I don't think it's good to be stuck on a bad road just because it was decided on long ago. I need to be agile in evaluating where I'm at and where I'm going. Strive for greatness. Doesn't mean go fast at the expense of quality, but to be agile in trying to attain greatness. So it is important to me to constantly strive to create.
+          </Explanation>
+        </Tile>
+        <Tile
+          color="Blue"
+          title="Empathy"
+        >
+          <Quote author="Oliver Wendell Holmes">
+              It is not the place we occupy which is important, but the direction in which we move.
+          </Quote>
+          <Explanation>
+            I think one of the most valuable things I've ever learned is how to empathize with others. When I think about the greatest movies or books I've read, they've always centered around characters that I can see the world through. Being able to understand others at that level is important to making decisions that will affect others. I want to care. Technology has an impact on others. Let's keep it positive, ummk?
+          </Explanation>
+        </Tile>
       </div>
     );
   }

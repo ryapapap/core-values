@@ -83,3 +83,28 @@ body {
 .Blue { 
   background-color: #023A47
 }
+/*
+.Tile:hover .Tile-Content, .Tile.hover .Tile-Content {
+  transform: rotateY(180deg);
+}
+
+.Tile-Content {
+	transition: 0.6s;
+	transform-style: preserve-3d;
+
+	position: relative;
+}
+
+.front, .back {
+	backface-visibility: hidden;
+}
+
+.front {
+	z-index: 2;
+	transform: rotateY(0deg);
+}
+
+.back {
+	transform: rotateY(180deg);
+}
+*/
