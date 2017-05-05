@@ -4,6 +4,7 @@ body {
 }
 
 .Tile-Title {
+  padding-bottom: 50px;
   text-align: center;
   font-family: 'Overpass', sans-serif;
   font-size: 150px;
@@ -11,40 +12,37 @@ body {
   height: 30%;
 }
 
-.Tile-Content {
-  height: 50%;
-  min-height: 500px;
-}
-
 .quote {
   margin: auto;
-  padding-top: 10%;
   font-size: 24px;
   font-family: 'Playfair Display', serif;
   font-style: italic;
-  width: 600px;
+  width: 85%;
+  max-width: 600px;
 }
 
 .author {
   padding-top: 15px;
   text-align: right;
-  padding-right: 60px;
+  width: 85%;
+  max-width: 600px;
+  margin: auto;
   font-size: 24px;
   font-family: 'Playfair Display', serif;
 }
 
 .explanation {
-  padding-top: 5%;
+  width: 90%;
+  max-width: 1000px;
+  padding-top: 100px;
   font-size: 24px;
-  column-count: 2;
   font-family: 'Playfair Display', serif;
-  width: 50%;
   margin: auto;
 }
 
 .definition {
+  padding-bottom: 20px;
   margin: auto;
-  padding-top: 10%;
   font-size: 24px;
   font-family: 'Playfair Display', serif;
   width: 320px;
@@ -57,8 +55,7 @@ body {
 }
 
 .Tile {
-  height: 100vh;
-  min-height: 500px;
+  padding: 10% 0;
   display: flex;
   align-items: center;
   justify-content: center;
