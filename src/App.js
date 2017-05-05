@@ -125,7 +125,7 @@ class App extends Component {
           title="Empathy"
         >
           <Quote author="Indian wisdom">
-              Do not be pround, no matter what position you occupy in life. In you and in me and in every other person lives the same God, the same life force; you look down on me in vain; we are all equal beings.
+              Do not be proud, no matter what position you occupy in life. In you and in me and in every other person lives the same God, the same life force; you look down on me in vain; we are all equal beings.
           </Quote>
           <Explanation>
             I care about other people. It matters to me how they feel. I want to consider that consequences of what I make and how it will impact others. I’m striving to be generous in giving back and trying to understand other people. Technology can be used for good and bad, let’s make it good.
