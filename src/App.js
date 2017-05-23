@@ -79,7 +79,7 @@ class App extends Component {
               Look at all your knowledge as a gift, as a means of helping other people.
           </Quote>
           <Explanation>
-            I think the coolest things about technology is the way that it’s helped people do things more easily. I’m constantly in awe of all the novel experiences technology has created and the way it’s made a seemingly infinite amount of knowledge easier to access. I aspire to use what I know to create things that help people either learn or do things.
+            I think the coolest things about technology is the way that it’s helped people do things more easily. I’m constantly impressed by all the novel experiences technology has created and the way it’s made a seemingly infinite amount of knowledge easier to access. I aspire to use what I know to create things that help people either learn or do things.
           </Explanation>
         </Tile>
         <Tile
@@ -94,7 +94,7 @@ class App extends Component {
             I mean constructive to have a double meaning. In one sense, I very much want to be creating things. I have a strong internal drive to create and I take a lot of pride in looking back at things that I’ve created. I think this motivation applies to a lot of things, from computer programs and words to physical objects and my self.
             </p>
             <p>
-            I also mean constructive in terms of communicating. I think how an idea is conveyed is very important. I don’t want to be fast criticize. I want to try hard to listen and understand where people are coming from and offer ideas in a way that helps things improve.
+            I also mean constructive in terms of communicating. I think how an idea is conveyed is very important. I don’t want to be fast to criticize. I want to try hard to listen and understand where people are coming from and offer ideas in a way that helps things improve.
             </p>
           </Explanation>
         </Tile>
@@ -103,7 +103,7 @@ class App extends Component {
           title="No Ego"
         >
           <Quote author="Marcus Aurelius">
-              Remember that you are more free if you change your opinion and follow those who have corrected your mistakes than if you are stubborn aabout your mistakes.
+              Remember that you are more free if you change your opinion and follow those who have corrected your mistakes than if you are stubborn about your mistakes.
           </Quote>
           <Explanation>
             I think it’s hard for things to improve if they’re too connected to some past idea. I want to have a mindset for growth and I understand that doing that means that I have to let my ego go. I’ve never felt very attached to titles or taking credit for things. I care very much that what I’m doing is good and doing that means taking the best ideas, not my own ideas.
@@ -128,7 +128,7 @@ class App extends Component {
               Do not be proud, no matter what position you occupy in life. In you and in me and in every other person lives the same God, the same life force; you look down on me in vain; we are all equal beings.
           </Quote>
           <Explanation>
-            I care about other people. It matters to me how they feel. I want to consider that consequences of what I make and how it will impact others. I’m striving to be generous in giving back and trying to understand other people. Technology can be used for good and bad, let’s make it good.
+            I care about other people. It matters to me how they feel. I want to consider the consequences of what I make and how it will impact others. I’m striving to be generous in giving back and trying to understand other people. Technology can be used for good and bad. I want to make it good.
           </Explanation>
         </Tile>
       </div>
